@@ -1,0 +1,17 @@
+.header-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.header-content nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 4px;
+}

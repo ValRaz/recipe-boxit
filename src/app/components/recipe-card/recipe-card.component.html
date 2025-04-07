@@ -1,0 +1,23 @@
+<mat-card class="recipe-card">
+  <mat-card-header>
+    <mat-card-title class="primary-title">{{ recipe.title }}</mat-card-title>
+  </mat-card-header>
+  <img *ngIf="recipe.image" mat-card-image [src]="recipe.image" alt="{{ recipe.title }}">
+  <mat-card-content>
+    <ng-container *ngIf="!isFavorite; else favoriteTemplate">
+      <div class="actions">
+        <button mat-raised-button color="primary" (click)="onSaveClick()">Save to Favorites</button>
+      </div>
+    </ng-container>
+    <ng-template #favoriteTemplate>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Notes</mat-label>
+        <textarea matInput [(ngModel)]="recipe.notes" placeholder="Add notes..." rows="2"></textarea>
+      </mat-form-field>
+      <div class="actions">
+        <button mat-raised-button color="accent" (click)="onUpdateNote(recipe.notes)">Update Notes</button>
+        <button mat-raised-button color="warn" (click)="onDeleteClick()">Delete</button>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

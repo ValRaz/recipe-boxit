@@ -1,0 +1,14 @@
+<div class="favorites-container">
+  <h2>My Favorite Recipes</h2>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div *ngIf="favorites.length > 0; else noFavorites" class="favorites-list">
+    <app-recipe-card *ngFor="let recipe of favorites"
+                     [recipe]="recipe"
+                     [isFavorite]="true"
+                     (delete)="onDeleteFavorite($event)">
+    </app-recipe-card>
+  </div>
+  <ng-template #noFavorites>
+    <p>No favorites saved yet. Search for recipes and save some!</p>
+  </ng-template>
+</div>

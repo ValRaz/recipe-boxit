@@ -1,0 +1,21 @@
+<div class="search-container">
+  <h2>Search Recipes by Ingredients</h2>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Ingredients (comma-separated)</mat-label>
+    <input matInput [(ngModel)]="ingredientsQuery" placeholder="e.g. chicken, rice, broccoli">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+</div>
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<div *ngIf="searchResults.length" class="results-container">
+  <h3>Search Results:</h3>
+  <div class="results-list">
+    <app-recipe-card *ngFor="let recipe of searchResults"
+                     [recipe]="recipe"
+                     [isFavorite]="false"
+                     (save)="onSaveRecipe($event)">
+    </app-recipe-card>
+  </div>
+</div>
