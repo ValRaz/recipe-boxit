@@ -4,6 +4,7 @@ import { RecipeService, SpoonacularRecipe } from '../../services/recipe.service'
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
+  styleUrl: './search.component.css',
   standalone: false
 })
 export class SearchComponent {

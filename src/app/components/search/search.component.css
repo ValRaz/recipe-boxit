@@ -1,13 +1,29 @@
+:host {
+  display: block;
+}
+
 .search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 600px;
   margin: 20px auto;
-  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 .full-width {
-  width: 100%;
+  width: 100% !important;
+  margin: 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+button[mat-raised-button] {
+  width: 100% !important;
+  margin: 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
 }
 
 .results-container {
